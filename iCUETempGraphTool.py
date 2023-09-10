@@ -20,19 +20,21 @@ output_directory = filedialog.askdirectory(title="Select Output Directory")
 if not output_directory:
     exit()
 
+# select columns to plot
+columns_to_plot = df.columns[1:]
+
 # plot graphs
-devices = df.columns[1:]  # exclude timestamp option
-for device in devices:
+for column in columns_to_plot:
     plt.figure(figsize=(12, 6))
-    plt.plot(df.index, df[device].str.rstrip('°C').astype(float))
-    plt.title(f'Temperature for {device}')
+    plt.plot(df.index, df[column])
+    plt.title(f'{column} over Time')
     plt.xlabel('Timestamp')
-    plt.ylabel('Temperature (°C)')
+    plt.ylabel(column)
     plt.grid(True)
     plt.tight_layout()
 
-    # generate filename based on the device name from the CSV file
-    filename = f"{device.replace(' ', '_')}_temperature.png"
+    # generate the filename based on the column name
+    filename = f"{column.replace(' ', '_')}.png"
     save_path = os.path.join(output_directory, filename)
 
     plt.savefig(save_path)
