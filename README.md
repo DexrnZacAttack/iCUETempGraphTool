@@ -2,6 +2,10 @@
 ### Note I, and this tool I have made is not related to Corsair in any way, I'm just somebody who wanted an easy way to graph things like this.
 Takes a CSV file from Corsair iCUE and creates a graph out of it.
 
+### Example Image
+<br>
+![CPU_Package_temperature](https://github.com/DexrnZacAttack/iCUETempGraphTool/assets/60078656/c47c42b3-d053-4103-87b9-1e43970517ed)
+
 # How to use
 (This applies for Corsair iCUE version 5.5, not sure about other ones.)
 
