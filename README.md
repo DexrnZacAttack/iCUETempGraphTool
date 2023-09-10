@@ -4,7 +4,7 @@ Takes a CSV file from Corsair iCUE and creates a graph out of it.
 
 ### Example Image
 <br>
-![CPU_Package_temperature](https://github.com/DexrnZacAttack/iCUETempGraphTool/assets/60078656/c47c42b3-d053-4103-87b9-1e43970517ed)
+<img src=https://github.com/DexrnZacAttack/iCUETempGraphTool/assets/60078656/3a29049e-6077-43fe-9e82-8a6b6785f101></img>
 
 # How to use
 (This applies for Corsair iCUE version 5.5, not sure about other ones.)
