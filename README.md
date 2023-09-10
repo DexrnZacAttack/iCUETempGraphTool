@@ -7,7 +7,7 @@ Takes a CSV file from Corsair iCUE and creates a graph out of it.
 
 1. Open Corsair iCUE and go to Settings
 2. Go to Sensor Logging and turn it on
-3. Select the desired devices to monitor and export tempurature from (I think you might also be able to use the fans too, and it will create a graph of the fan speed.)
+3. Select the desired devices to monitor and export tempurature from (I think you might also be able to use the fans, load and other things too, and it will create a graph of them.)
 4. Select the output directory <br>
 5. Wait a while for it to monitor, once you are ready, run the script and select the CSV file and the folder to output the PNGs to.
 6. You are done.
