@@ -2,6 +2,7 @@
 ### Note: I, and this tool I have made is/are not related to Corsair in any way, I'm just somebody who wanted an easy way to graph things like this.
 Takes a CSV file from Corsair iCUE and creates a graph out of it.
 
+
 ### Example Image
 <br>
 <img src=https://github.com/DexrnZacAttack/iCUETempGraphTool/assets/60078656/3a29049e-6077-43fe-9e82-8a6b6785f101></img>
@@ -11,12 +12,13 @@ Takes a CSV file from Corsair iCUE and creates a graph out of it.
 <br>
 ### (This guide applies for Corsair iCUE version 5.5, not sure about other ones.)
 
-1. Open Corsair iCUE and go to Settings
-2. Go to Sensor Logging and turn it on
-3. Select the desired devices to monitor and export temperature from
-4. Select the output directory <br>
-5. Wait a while for it to monitor, once you are ready, run the script and select the CSV file and the folder to output the PNGs to.
-6. You are done.
+1. Install Corsair iCUE if you don't already have it (Note you do not need a Corsair device to use both iCUE and this tool.)
+2. Open Corsair iCUE and go to Settings
+3. Go to Sensor Logging and turn it on
+4. Select the desired devices to monitor and export temperature from
+5. Select the output directory <br>
+6. Wait a while for it to monitor, once you are ready, run the script and select the CSV file and the folder to output the PNGs to.
+7. You are done.
 
 If there are any issues, please leave a bug report at https://github.com/DexrnZacAttack/iCUETempGraphTool/issues
 You may also make suggestions.
