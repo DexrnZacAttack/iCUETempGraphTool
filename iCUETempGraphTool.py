@@ -47,7 +47,7 @@ for column in columns_to_plot:
     # rotate bottom time labels for better readability
     plt.xticks(rotation=45)
 
-    # idek how to explain this lmao
+    
     ax.yaxis.set_major_locator(plt.MaxNLocator(nbins=6))  # adjust the number of ticks as needed
 
     # generate the filename based on the column name
