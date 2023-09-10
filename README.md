@@ -7,11 +7,12 @@ Takes a CSV file from Corsair iCUE and creates a graph out of it.
 <img src=https://github.com/DexrnZacAttack/iCUETempGraphTool/assets/60078656/3a29049e-6077-43fe-9e82-8a6b6785f101></img>
 
 # How to use
+(Note: 12:08PM 9/10/2023 - Got it working with Fans (kinda weird graph tho), as well as VCPU, and CPU/GPU Load.)
 (This applies for Corsair iCUE version 5.5, not sure about other ones.)
 
 1. Open Corsair iCUE and go to Settings
 2. Go to Sensor Logging and turn it on
-3. Select the desired devices to monitor and export temperature from (I think you might also be able to use the fans, load and other things too, and it will create a graph of them.)
+3. Select the desired devices to monitor and export temperature from
 4. Select the output directory <br>
 5. Wait a while for it to monitor, once you are ready, run the script and select the CSV file and the folder to output the PNGs to.
 6. You are done.
