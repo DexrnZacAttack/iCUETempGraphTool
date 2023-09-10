@@ -25,18 +25,21 @@ columns_to_plot = df.columns[1:]
 
 # plot graphs
 for column in columns_to_plot:
-    plt.figure(figsize=(12, 6))
-    plt.plot(df.index, df[column])
-    plt.title(f'{column} over Time')
-    plt.xlabel('Timestamp')
-    plt.ylabel(column)
-    plt.grid(True)
-    plt.tight_layout()
+    fig, ax = plt.subplots(figsize=(12, 6))
+    ax.plot(df.index, df[column])
+    ax.set_title(f'{column} over Time')
+    ax.set_xlabel('Timestamp')
+    ax.set_ylabel(column)
+    ax.grid(True)
+
+    # idek how to explain this lmao
+    ax.yaxis.set_major_locator(plt.MaxNLocator(nbins=6))  # adjust number of ticks as needed
 
     # generate the filename based on the column name
     filename = f"{column.replace(' ', '_')}.png"
     save_path = os.path.join(output_directory, filename)
 
+    plt.tight_layout()
     plt.savefig(save_path)
     plt.close()
 
