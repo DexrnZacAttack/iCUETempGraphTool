@@ -1,5 +1,5 @@
 # iCUETempGraphTool
-### Note I, and this tool I have made is not related to Corsair in any way, I'm just somebody who wanted an easy way to graph things like this.
+### Note: I, and this tool I have made is/are not related to Corsair in any way, I'm just somebody who wanted an easy way to graph things like this.
 Takes a CSV file from Corsair iCUE and creates a graph out of it.
 
 ### Example Image
