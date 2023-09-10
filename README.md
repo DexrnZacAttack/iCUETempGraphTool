@@ -8,7 +8,8 @@ Takes a CSV file from Corsair iCUE and creates a graph out of it.
 
 # How to use
 (Note: 12:08PM 9/10/2023 - Got it working with Fans (kinda weird graph tho), as well as VCPU, and CPU/GPU Load.)
-(This applies for Corsair iCUE version 5.5, not sure about other ones.)
+<br>
+(This guide applies for Corsair iCUE version 5.5, not sure about other ones.)
 
 1. Open Corsair iCUE and go to Settings
 2. Go to Sensor Logging and turn it on
