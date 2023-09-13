@@ -46,6 +46,7 @@ if not output_directory:
     exit()
 
 # Loop through each column and create a plot
+print("[INFORMATION] Starting graphing.")
 for column in columns_to_plot:
     
     # Create a new figure for each plot with specified dimensions
@@ -71,6 +72,15 @@ for column in columns_to_plot:
     # Rotate the x-axis labels for better readability
     plt.xticks(rotation=10)
 
+    # Get unique labels from the current column and sort them numerically
+    y_labels = df[column].unique()
+    sorted_y_labels = sorted(y_labels, key=lambda label: float(''.join(filter(str.isdigit, label))))
+
+    # Configure the y-axis tick locations and labels
+    loc = ticker.MultipleLocator(base=max(1, len(sorted_y_labels) // 10))
+    plt.gca().yaxis.set_major_locator(loc)
+    plt.gca().set_yticklabels(sorted_y_labels)
+    
     # Use MaxNLocator to limit the number of X-axis labels
     locator = ticker.MaxNLocator(nbins=10)
     plt.gca().xaxis.set_major_locator(locator)
