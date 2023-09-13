@@ -16,8 +16,6 @@ if not file_path:
     print("\n[ERROR] No file selected, Exiting.")
     exit()
  
-    
-
 # Define the date format used in the CSV file
 date_format = "%m/%d/%Y %H:%M:%S %p"
 
@@ -36,7 +34,7 @@ RowAmount = df.shape[0]
 FileSize = os.path.getsize(file_path)
 print(f'\n[DEBUG] There are {ColumnAmount} columns in the CSV file.')
 print(f'[DEBUG] There are {RowAmount} rows in the CSV file.')
-print(f'[DEBUG] The file is {FileSize}B in size.')
+print(f'[DEBUG] The file is {FileSize}b in size.')
 
 # Ask the user to select an output directory using a directory dialog
 print("\n[MESSAGE] Please select a output folder.")
