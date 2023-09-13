@@ -12,12 +12,28 @@ file_path = filedialog.askopenfilename(title="Select CSV file")
 if not file_path:
     print("[ERROR] No file selected, Exiting.")
     exit()
+ 
+    
 
 # Define the date format used in the CSV file
 date_format = "%m/%d/%Y %H:%M:%S %p"
 
+# Define ColumnsDefined
+ColumnsComplete = 0
+
 # Read the CSV file into a DataFrame and parse the "Timestamp" column as dates
 df = pd.read_csv(file_path, parse_dates=["Timestamp"])
+
+# Get a list of columns in the DataFrame to create plots for
+columns_to_plot = df.columns[1:]
+
+# Define and print column and row amount
+ColumnAmount = len(columns_to_plot)
+RowAmount = df.shape[0]
+FileSize = os.path.getsize(file_path)
+print(f'[DEBUG] There are {ColumnAmount} columns in the CSV file.')
+print(f'[DEBUG] There are {RowAmount} rows in the CSV file.')
+print(f'[DEBUG] The file is {FileSize} in size.')
 
 # Ask the user to select an output directory using a directory dialog
 print("[MESSAGE] Please select a output folder.")
@@ -27,9 +43,6 @@ output_directory = filedialog.askdirectory(title="Select Output Directory")
 if not output_directory:
     print("[ERROR] No folder selected, Exiting.")
     exit()
-
-# Get a list of columns in the DataFrame to create plots for
-columns_to_plot = df.columns[1:]
 
 # Loop through each column and create a plot
 for column in columns_to_plot:
@@ -66,8 +79,11 @@ for column in columns_to_plot:
     plt.gca().yaxis.set_major_locator(loc)
     plt.gca().set_yticklabels(sorted_y_labels)
     
+    # Increment ColumnsComplete so that the print command will show when each column is complete.
+    ColumnsComplete += 1
+    print(f'[DEBUG] Column {ColumnsComplete} Complete')
+    
     # Generate the filename for the saved plot
-    print("[DEBUG] Column Complete")
     filename = f"{column.replace(' ', '_')}.png"
     save_path = os.path.join(output_directory, filename)
 
