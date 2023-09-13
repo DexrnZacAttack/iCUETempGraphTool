@@ -5,10 +5,12 @@ import os
 import matplotlib.ticker as ticker
 
 # Ask the user to select a CSV file using a file dialog
+print("[MESSAGE] Please select a CSV file.")
 file_path = filedialog.askopenfilename(title="Select CSV file")
 
 # If the user cancels the file dialog, exit the program
 if not file_path:
+    print("[ERROR] No file selected, Exiting.")
     exit()
 
 # Define the date format used in the CSV file
@@ -18,10 +20,12 @@ date_format = "%m/%d/%Y %H:%M:%S %p"
 df = pd.read_csv(file_path, parse_dates=["Timestamp"])
 
 # Ask the user to select an output directory using a directory dialog
+print("[MESSAGE] Please select a output folder.")
 output_directory = filedialog.askdirectory(title="Select Output Directory")
 
 # If the user cancels the directory dialog, exit the program
 if not output_directory:
+    print("[ERROR] No folder selected, Exiting.")
     exit()
 
 # Get a list of columns in the DataFrame to create plots for
@@ -29,6 +33,7 @@ columns_to_plot = df.columns[1:]
 
 # Loop through each column and create a plot
 for column in columns_to_plot:
+    
     # Create a new figure for each plot with specified dimensions
     plt.figure(figsize=(12, 6))
 
@@ -60,8 +65,9 @@ for column in columns_to_plot:
     loc = ticker.MultipleLocator(base=max(1, len(sorted_y_labels) // 10))
     plt.gca().yaxis.set_major_locator(loc)
     plt.gca().set_yticklabels(sorted_y_labels)
-
+    
     # Generate the filename for the saved plot
+    print("[DEBUG] Column Complete")
     filename = f"{column.replace(' ', '_')}.png"
     save_path = os.path.join(output_directory, filename)
 
@@ -72,7 +78,7 @@ for column in columns_to_plot:
     plt.close()
 
 # Inform the user that the graphs have been saved successfully
-print("Graphs saved successfully.")
+print("[SUCCESS] Graphs saved successfully.")
 
 
 # The comments were added by an AI because I am horrible at leaving code comments.
